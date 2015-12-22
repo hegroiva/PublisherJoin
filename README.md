@@ -44,5 +44,3 @@ Join publisher names written in multiple ways
     * one occurrence of each pair is enough, the program takes care of the reverse prevention
     * language specific
     
-remove_endings.R
-harmonize_names.R
