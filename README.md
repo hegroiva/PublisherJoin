@@ -8,7 +8,7 @@
     * Orthographical changes
     * Publishers themselves have had their names written in different ways
 
-# Files needed for handling
+## Files needed for handling
   * main.R
     * Imports the necessary libraries
     * writes the output .csv
@@ -55,3 +55,32 @@
     * one occurrence of each pair is enough, the program takes care of the reverse prevention
     * language specific
     
+##How to read the output file Publisher.csv
+  * order from the most frequent publisher name group to the least frequent
+    + the order within the publisher name group is alphabetical, except for the most frequent name group, which is first
+  * four columns
+     + orig
+       - the original value before (almost) any changes
+       - if the field contained multiple publishers, the first one (un-bracketed and un-parenthesized) is used
+     + mod
+       - the value, into which it was combined
+     + comp
+       - the value after modifications, before combining into anything
+       - empty, if only one or two occurrences in the original data
+     + total
+       - total count of occurrences combined, by any name form
+       - zero, if the publisher name was combined into something else
+     
+##How to read the output file Publishers_combined.csv
+  * lists only the changes values and their originals
+  * order from the most frequent publisher name group to the least frequent
+    + the order within the publisher name group is alphabetical
+  * two columns
+    + original_publisher
+      - the original value before (almost) any changes
+      - if the field contained multiple publishers, the first one (un-bracketed and un-parenthesized) is used
+    + modified_publisher
+      - the value, into which the original value was changed
+
+##How did it go
+Combining the publishers went surprisingly well. Deciding the string edit distance method (Jaro-Winkler) was quite tedious, especially choosing the threshold values for it. That process wasn't automated at all. Cleaning the data was also troublesome, and the data probably could be scrutinized even more carefully. Wrong combinations seem to be really scarce. Some of the probable combinations didn't happen, because the years were too far apart from each other. This isn't seen in the .csv files, since I left the years out from them. On the whole, I'm quite content with the results. The process could be (and will be) used to handle data from other language with attaching new language-specific (or data-specific) .csv-files and minor code changes.
