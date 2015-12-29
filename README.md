@@ -8,7 +8,7 @@
     * Orthographical changes
     * Publishers themselves have had their names written in different ways
 
-# Files needed for handling
+## Files needed for handling
   * main.R
     * Imports the necessary libraries
     * writes the output .csv
@@ -55,3 +55,19 @@
     * one occurrence of each pair is enough, the program takes care of the reverse prevention
     * language specific
     
+##How to read the output file
+  * order from the most frequent publisher name group to the least frequent
+    + the order within the publisher name group is alphabetical, except for the most frequent name group, which is first
+  * four columns
+     + orig
+       - the original value before (almost) any changes
+       - if the field contained multiple publishers, the first one (un-bracketed and un-parenthesized) is used
+     + mod
+       - the value, into which it was combined
+     + comp
+       - the value after modifications, before combining into anything
+       - empty, if only one or two occurrences in the original data
+     + total
+       - total count of occurrences combined, by any name form
+       - zero, if the publisher name was combined into something else
+     
