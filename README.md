@@ -72,12 +72,12 @@
        - zero, if the publisher name was combined into something else
      
 ##How to read the output file Publishers_combined.csv
-    * lists only the changes values and their originals
-    * order from the most frequent publisher name group to the least frequent
-      + the order within the publisher name group is alphabetical
-    * two columns
-      + original_publisher
-        - the original value before (almost) any changes
-        - if the field contained multiple publishers, the first one (un-bracketed and un-parenthesized) is used
-      + modified_publisher
-        - the value, into which the original value was changed
+  * lists only the changes values and their originals
+  * order from the most frequent publisher name group to the least frequent
+    + the order within the publisher name group is alphabetical
+  * two columns
+    + original_publisher
+      - the original value before (almost) any changes
+      - if the field contained multiple publishers, the first one (un-bracketed and un-parenthesized) is used
+    + modified_publisher
+      - the value, into which the original value was changed
