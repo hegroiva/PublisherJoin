@@ -13,6 +13,7 @@ source("harmonize_for_comparison.R")
 source("extract_personal_names.R")
 
 
+# NB! Data not included, because it's use is restricted
 source.data.file <- "data/kungliga.csv"
 
 output.folder <- "Output/"
