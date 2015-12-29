@@ -55,7 +55,7 @@
     * one occurrence of each pair is enough, the program takes care of the reverse prevention
     * language specific
     
-##How to read the output file
+##How to read the output file Publisher.csv
   * order from the most frequent publisher name group to the least frequent
     + the order within the publisher name group is alphabetical, except for the most frequent name group, which is first
   * four columns
@@ -71,3 +71,13 @@
        - total count of occurrences combined, by any name form
        - zero, if the publisher name was combined into something else
      
+##How to read the output file Publishers_combined.csv
+    * lists only the changes values and their originals
+    * order from the most frequent publisher name group to the least frequent
+      + the order within the publisher name group is alphabetical
+    * two columns
+      + original_publisher
+        - the original value before (almost) any changes
+        - if the field contained multiple publishers, the first one (un-bracketed and un-parenthesized) is used
+      + modified_publisher
+        - the value, into which the original value was changed
