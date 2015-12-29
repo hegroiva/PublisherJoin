@@ -2,8 +2,7 @@
 harmonize_for_comparison <- function(x, language="english") {
   
   if (language=="swedish") {
-    #f <- "../inst/extdata/sv_publisher_comparison.csv"
-    f <- system.file("extdata/sv_publisher_comparison.csv", package = "bibliographica")
+    f <- "sv_publisher_comparison.csv"
   } else if (language=="english") {
     
   } else {

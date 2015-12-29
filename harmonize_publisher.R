@@ -1,10 +1,15 @@
 #' @importFrom sorvi harmonize_names
 #' 
 harmonize_publisher <- function(x, publication_year, language="english") {
-  #f <- system.file("extdata/sv_publisher.csv", package = "bibliographica")
-  f <- "../inst/extdata/sv_publisher.csv"
+  
+  if (language="swedish") {
+    f <- "sv_publisher.csv"
+  } else if (language="english") {
+    
+  } else {
+    
+  }
   synonyms <- read.csv(f, sep = "\t", fileEncoding = "UTF-8")
-  #synonyms$synonyme <- paste(synonyms$synonyme, "[ \\b] ",sep = "")
   
   q <- x
   
@@ -51,13 +56,6 @@ harmonize_publisher <- function(x, publication_year, language="english") {
   # Get the minimum & maximum years for each publisher name
   ranges <- data.frame(min=integer(length(unique(q))), max=integer(length(unique(q))), publisher=character(length(unique(q))), stringsAsFactors=FALSE)
   
-  
-  # extra round to harmonize the ortography through times
-  #f <- system.file("extdata/sv_publisher_comparison.csv", package = "bibliographica")
-  #f <- "../inst/extdata/sv_publisher_comparison.csv"
-  #synonyms <- read.csv(f, sep = "\t", fileEncoding = "UTF-8")
-  #q <- harmonize_names(q, synonyms, mode="recursive")$name
-  
   i = 1
   maxdiff = 5
   maxrange = 40
@@ -101,7 +99,7 @@ harmonize_publisher <- function(x, publication_year, language="english") {
   total <- sum(tab[,2])
 
   # Build the stop mechanism
-  f <- "../inst/extdata/sv_publisher_caveat.csv"
+  f <- "sv_publisher_caveat.csv"
   caveats <- read.csv(f, sep = "\t", fileEncoding = "UTF-8",)
   cav <- data.frame(name1=character(nrow(caveats)*2), name2=character(nrow(caveats)*2), stringsAsFactors=FALSE)
   for (i in 1:nrow(caveats)) {

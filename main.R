@@ -8,18 +8,24 @@ library(dplyr)
 library(stringdist)
 import::from(sorvi, harmonize_names)
 
+source("harmonize_publisher.R")
+source("harmonize_for_comparison.R")
+source("extract_personal_names.R")
+
+
 source.data.file <- "data/kungliga.csv"
+
 output.folder <- "Output/"
 
 df.orig <- read_bibliographic_metadata(source.data.file)
-setwd("PublisherJoin/")
+
 
 df <- data.frame(list(row.index = 1:nrow(df.orig)))
 
 publication_year <- polish_year_of_publication(df.orig$publication_time)
 
 publisher <- harmonize_publisher(df.orig$publisher, publication_year, language="swedish")
-res <- cbind.data.frame(publisher=x$mod, orig=publisher$orig, combined_count=publisher$total)
+res <- cbind.data.frame(publisher=publisher$mod, orig=publisher$orig, combined_count=publisher$total)
 filename <- paste(output.folder, "Publisher.csv", sep = "")
 
 # Now some field order customizing
