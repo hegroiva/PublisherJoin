@@ -1,5 +1,12 @@
 # PublisherJoin
-Join publisher names written in multiple ways
+##Purpose
+  + Join publisher names written in multiple ways
+    * Try to minimize redundant publisher names from metadata
+  + Publisher names have been written in numerous ways
+    * The standards of writing the metadata has changed through times
+    * Spelling mistakes
+    * Orthographical changes
+    * Publishers themselves have had their names written in different ways
 
 # Files needed for handling
   * main.R
