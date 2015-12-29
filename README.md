@@ -2,6 +2,10 @@
 Join publisher names written in multiple ways
 
 # Files needed for handling
+  * main.R
+    * Imports the necessary libraries
+    * writes the output .csv
+    
   * harmonize_publisher.R
     * Contains the main code
 
