@@ -25,25 +25,25 @@ Contains lots of noise and orthographical differences.
 
 #Program
 
-##main.R
-Imports the required libraries
+##Usage
+Run main.R by any means necessary<br>
+harmonize_publisher is called from main.R
 
-Outputs the results
-
-
-##harmonize_publisher.R
+##More details about harmonize_publisher()
 ###Parameters
-+ publication_year
-  * data frame with three vectors
-    - published_in<br>
+  + x
+    * vector containing the publisher field as it exists in kungliga.csv
+  + publication_year
+    * data frame with three vectors
+      - published_in<br>
 		  the year, when the publication year by one year only in the data
-    - published_from<br>
+      - published_from<br>
 			start year, when the publication year has been stated by a range of years
-    - published_till<br>
+      - published_till<br>
 			end year, when the publication year has been stated by a range of years
-+ language
-  * string, with fixed values
-		- swedish is currently the only supported language
+  + language
+    * string, with fixed values
+      - swedish is currently the only supported language
 
 ###Processing order
 1. Select publisher name from the list
