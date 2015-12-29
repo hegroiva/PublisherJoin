@@ -81,3 +81,6 @@
       - if the field contained multiple publishers, the first one (un-bracketed and un-parenthesized) is used
     + modified_publisher
       - the value, into which the original value was changed
+
+##How did it go
+Combining the publishers went surprizingly well. Deciding the string edit distance method (Jaro-Winkler) was quite tedious, especially choosing the threshold values for it. That process wasn't automated at all. Cleaning the data was also troublesome, and the data probably could be scrutinized even more carefully. Wrong combinations seem to be really scarce. Some of the probable combinations didn't happen, because the years were too far apart from each other. This isn't seen in the .csv files, since I left the years out from them. On the whole, I'm quite content with the results. The process could be (and will be) used to handle data from other language with attaching new language-specific (or data-specific) .csv-files and minor code changes.
